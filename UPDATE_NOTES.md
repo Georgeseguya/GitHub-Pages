@@ -1,13 +1,9 @@
-# Greylad studio update — 25 October 2026
+# Greylad website update — October 25, 2026
 
-This is a company/studio-site update, separate from the personal website.
+Revised the studio website's wording and structure. Pharmaceutics, Health, Research, Writing and Technology now have unnumbered entries and interactive discipline panels. Copy was tightened throughout, including the pharmaceutical project, research archive, book card, contact section and site footer.
 
-**Positioning:** Pharmaceutics → Research → Writing → Technology.
+Introduced a team roster with working Profile, Experience and Projects tabs. The roster is ready for multiple members without changing the overall layout. Team biographies remain within the team section.
 
-**Content:** Published book featured with the owner-supplied Amazon URL, fantasy manuscript listed without an unpublished title, previous plant-research listing removed, single CV-based founder profile added under Meet our team, personal contact details supplied by the owner inserted.
+The Amazon listing is still the destination for *Beyond the Goal*. The book panel can use the listing cover image when a suitable image is available from its metadata. The cover has not been independently retrieved from the shortened link in this environment.
 
-**Design:** Existing concentric-G mark retained. Graphite Grey `#34363B`, pearl `#F6F6F4`, silver `#A8ADB4` and neutral supporting shades. Navigation, publication explorer, team profile, technical visuals and mobile layouts redesigned.
-
-**Functionality:** Keyboard accessible discipline tabs, animated but reduced-motion-aware logo, filters, search, detail dialog, mobile menu, contact links, copy-email action and scroll progress. Optional Supabase owner studio preserved. No new backend created.
-
-**Publication:** These files are committed to the Greylad GitHub repository but are not automatically published to previously hosted previews. The Amazon short link was supplied by the owner but its redirect/metadata could not be verified here.
+Added automated source checks for later changes and retained the graphite, pearl and silver palette. The public editor link was removed from the footer; the access-controlled editor itself remains available at its direct route when configured.

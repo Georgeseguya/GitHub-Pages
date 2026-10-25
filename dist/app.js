@@ -9,12 +9,13 @@ const $$ = (selector) => [...document.querySelectorAll(selector)];
 const dialog = $('#detail');
 const safeUrl = (value) => {try {const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? url.href : null;} catch {return null;}};
 
-// The focus index is the defining interaction on this site. All states remain keyboard-accessible.
+// Keyboard-accessible navigation across disciplines.
 const discipline = {
-  pharm: {code:'FIELD / 01',subtitle:'FORMULATION · DOSAGE FORMS · PROCESS',title:'From materials to medicine.',description:'We examine how material attributes, excipients and manufacturing processes influence the performance of oral dosage forms.',link:'#projects',linkLabel:'See related work'},
-  research:{code:'FIELD / 02',subtitle:'QUESTIONS · METHODS · EVIDENCE',title:'Questions worth investigating.',description:'We work on research reviews, technical assessments and the careful interpretation of pharmaceutical and health-related evidence.',link:'#research',linkLabel:'Browse research'},
-  writing:{code:'FIELD / 03',subtitle:'PUBLICATIONS · BOOKS · TECHNICAL WRITING',title:'Writing that has a purpose.',description:'We publish books, develop manuscripts and make complex scientific information easier to follow without losing precision.',link:'#writing',linkLabel:'Browse writing'},
-  tech:{code:'FIELD / 04',subtitle:'DIGITAL TOOLS · SYSTEMS · PROTOTYPES',title:'Useful tools, carefully built.',description:'We develop small digital products and explore systems for organising financial and health information.',link:'#projects',linkLabel:'See digital projects'}
+  pharm: {code:'PHARMACEUTICS',subtitle:'PHARMACEUTICAL DEVELOPMENT',title:'Dosage forms and manufacturing.',description:'Technical work spanning formulation development, process evaluation, manufacturing transfer and product quality.',link:'#projects',linkLabel:'Related projects'},
+  health: {code:'HEALTH',subtitle:'HEALTH SYSTEMS',title:'Health data and services.',description:'Digital records, health service reporting and information systems for healthcare planning.',link:'#projects',linkLabel:'Health projects'},
+  research: {code:'RESEARCH',subtitle:'SCIENTIFIC RESEARCH',title:'Studies and publications.',description:'Literature reviews, scientific research, technical assessment and research communication.',link:'#research',linkLabel:'Browse research'},
+  writing: {code:'WRITING',subtitle:'BOOKS AND MANUSCRIPTS',title:'Books and publishing.',description:'Published nonfiction, manuscripts and technical writing.',link:'#writing',linkLabel:'Browse writing'},
+  tech: {code:'TECHNOLOGY',subtitle:'SOFTWARE AND DIGITAL PRODUCTS',title:'Digital tools and systems.',description:'Software, web applications and data tools developed for practical use.',link:'#projects',linkLabel:'View projects'}
 };
 function showFocus(key, focus = false) {
   if (!Object.prototype.hasOwnProperty.call(discipline, key)) return;
@@ -50,6 +51,82 @@ for (const tab of focusTabs) {
     showFocus(focusTabs[next].dataset.focus, true);
   });
 }
+
+// The member list and profile views allow the roster to expand without changing the layout.
+const teamViews = {
+  profile: {
+    lead: 'Pharmaceutical scientist working in formulation development, manufacturing technology transfer and pharmaceutical quality systems.',
+    detail: 'Work across pharmaceutical science, research, technical writing and digital product development.'
+  },
+  experience: {
+    lead: 'Experience in GMP-regulated pharmaceutical manufacturing, process validation, quality investigations and site transfer.',
+    detail: 'Technical contributions include manufacturing documentation, change control, risk assessment and formulation-development activities.'
+  },
+  projects: {
+    lead: 'Greylad, VybaCash and research-related digital projects.',
+    detail: 'Current interests include pharmaceutical research, publishing and healthcare information systems.'
+  }
+};
+const teamTabs = $$('.team-view-tab');
+function showTeamView(key, shouldFocus=false){
+  if(!Object.prototype.hasOwnProperty.call(teamViews,key))return;
+  for(const tab of teamTabs){
+    const active=tab.dataset.teamView===key;
+    tab.classList.toggle('active',active);
+    tab.setAttribute('aria-selected',String(active));
+    tab.tabIndex=active?0:-1;
+    if(active&&shouldFocus)tab.focus();
+  }
+  $('#team-view-panel').setAttribute('aria-labelledby','team-tab-'+key);
+  $('#team-view-lead').textContent=teamViews[key].lead;
+  $('#team-view-detail').textContent=teamViews[key].detail;
+}
+for(const tab of teamTabs){
+  tab.addEventListener('click',()=>showTeamView(tab.dataset.teamView));
+  tab.addEventListener('keydown',event=>{
+    if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;
+    event.preventDefault();
+    const index=teamTabs.indexOf(tab);
+    const next=event.key==='Home'?0:event.key==='End'?teamTabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+teamTabs.length)%teamTabs.length;
+    showTeamView(teamTabs[next].dataset.teamView,true);
+  });
+}
+// Linked editorial navigation can open a specific discipline directly.
+for(const link of $$('[data-open-focus]'))link.addEventListener('click',()=>showFocus(link.dataset.openFocus));
+
+// The book image comes from the publisher listing metadata rather than a recreated cover.
+// If the listing does not expose an image, the neutral text treatment remains visible.
+async function loadPublishedCover(){
+  const cover = $('#amazon-book-cover'), fallback = $('#book-cover-fallback');
+  if (!cover || !fallback) return;
+  const bookLink = $('.book-copy a[href^="https://amzn.eu/"]');
+  if (!bookLink) return;
+  try {
+    const api = 'https://api.microlink.io?url='+encodeURIComponent(bookLink.href);
+    const controller = new AbortController();
+    const timeout = setTimeout(()=>controller.abort(),6000);
+    let response;
+    try { response=await fetch(api,{signal:controller.signal,mode:'cors'}); }
+    finally { clearTimeout(timeout); }
+    if(!response.ok) return;
+    const json=await response.json();
+    const image=json?.data?.image;
+    const url=safeUrl(typeof image==='string'?image:image?.url||'');
+    if(!url || !/^https:\/\//.test(url))return;
+    const picture = new Image();
+    picture.onload=()=>{
+      // Generic site logos are not substitutes for a book cover.
+      const ratio=picture.naturalWidth/picture.naturalHeight;
+      if(picture.naturalHeight<200 || ratio<.48 || ratio>.9)return;
+      cover.src=url;
+      cover.hidden=false;
+      fallback.hidden=true;
+      $('#book-cover-frame').classList.add('has-cover');
+    };
+    picture.src=url;
+  } catch {/* Keep text fallback. */}
+}
+loadPublishedCover();
 
 function showDetail(entry) {
   $('#detail-category').textContent = entry.category || 'Note';
@@ -119,8 +196,8 @@ dialog.addEventListener('click',event=>{
   if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close();}
 });
 $('[data-project="health"]').addEventListener('click',()=>showDetail({
-  category:'Health technology',title:'A practical health-data platform concept',status:'Concept — not a live clinical service',
-  body:'We are exploring a system that could help health facilities document medicines, service activity and relevant trends for reporting and planning.\n\nThe concept includes secure data collection, role-based access, aggregated reporting and safeguards for patient information. Clinical use would require further testing, oversight and suitable data-protection controls.'
+  category:'Health technology',title:'Health information systems',status:'Concept',
+  body:'A proposed information system for health facilities, with service records, medicine-use reporting and aggregate health indicators. Access control and patient-data protection are central design requirements.'
 }));
 $('#year').textContent = new Date().getFullYear();
 
@@ -148,7 +225,7 @@ if('IntersectionObserver' in window){
   for(const item of $$('.reveal'))observer.observe(item);
 }else{for(const item of $$('.reveal'))item.classList.add('in-view');}
 
-// Small pointer movement gives the concentric G a physical depth without persistent animation.
+// Subtle pointer response for the brand mark.
 const heroArt=$('#hero-aside');
 if(window.matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
   heroArt.addEventListener('pointermove', event=>{

@@ -1,0 +1,21 @@
+name: Site checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source syntax
+        run: |
+          node --check dist/app.js
+          node --check dist/content.js
+          node --check dist/admin.js
+      - name: Check site structure and content
+        run: node --test tests/site-smoke.mjs
