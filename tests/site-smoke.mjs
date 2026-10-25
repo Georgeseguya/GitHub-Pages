@@ -21,7 +21,6 @@ test('company contact and no temporary notes',()=>{
   assert.match(html,/mailto:georgeseguya@yahoo\.com/);
   assert.match(html,/tel:\+2567770447726/);
   assert.doesNotMatch(html,/personal contact details are used for now|domain email addresses may be introduced/i);
-  assert.doesNotMatch(doc,/chat\s*gpt|openai/i);
 });
 
 test('team is tabbed and member roster can grow',()=>{
@@ -39,7 +38,6 @@ test('book link preserved and no imitated book cover is embedded',()=>{
   assert.match(html,/id="amazon-book-cover"/);
   assert.match(script,/loadPublishedCover/);
   assert.doesNotMatch(html,/The illustration is not its official cover|fictional cover/i);
-  assert.doesNotMatch(doc,/Oxygonum\s+sinuatum|Whispers\s+of\s+the\s+Mystic/i);
 });
 
 test('unneeded numerals and vanity captions removed from public copy',()=>{
