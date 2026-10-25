@@ -1,9 +1,15 @@
-# Greylad website update — October 25, 2026
+# Greylad website revision — October 2026
 
-Revised the studio website's wording and structure. Pharmaceutics, Health, Research, Writing and Technology now have unnumbered entries and interactive discipline panels. Copy was tightened throughout, including the pharmaceutical project, research archive, book card, contact section and site footer.
+**Homepage:** Introduced “A curious mind. A world of possibilities.” as the principal message, with the concentric-G emblem.
 
-Introduced a team roster with working Profile, Experience and Projects tabs. The roster is ready for multiple members without changing the overall layout. Team biographies remain within the team section.
+**Disciplines:** Reordered Pharmaceutics, Technology, Health, Research and Writing. Removed numbered or artificial section labels and simplified public copy.
 
-The Amazon listing is still the destination for *Beyond the Goal*. The book panel can use the listing cover image when a suitable image is available from its metadata. The cover has not been independently retrieved from the shortened link in this environment.
+**Team:** Rebuilt the team section with a member roster and four functional tabs: Overview, Technology, Pharmaceutics and Projects. The profile covers pharmaceutical manufacturing, technology transfer, JavaScript, databases, Supabase, Vercel and software product development.
 
-Added automated source checks for later changes and retained the graphite, pearl and silver palette. The public editor link was removed from the footer; the access-controlled editor itself remains available at its direct route when configured.
+**Writing:** Embedded the actual book-cover image supplied by the author for *Beyond the Goal* and preserved the Amazon link. The fantasy manuscript remains a work in progress.
+
+**Interaction:** Rebuilt navigation, selector tabs, project dialogs, archive filters, search, team tabs and copy-email functionality. No external service is required to show the cover image or use the main website interactions.
+
+**Visual:** Kept Graphite Grey, Pearl, Silver, and the concentric-G brand design. Adjusted desktop and mobile layouts for reliable interaction and no overflow.
+
+**Checks:** 8 Node tests and 86 Chromium interface checks passed locally. Test details are recorded in `CHECKS.md`.

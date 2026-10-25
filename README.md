@@ -1,52 +1,69 @@
 # Greylad
 
-Greylad presents work across pharmaceutics, health, research, writing and technology. This is the studio website, distinct from the founder's personal website.
+Greylad's public website for pharmaceutics, technology, health, research and writing. The official source is organised as a static website in `dist/`, ready for deployment on Vercel and similar hosting platforms.
 
-## Site structure
+## Website
 
-The main page includes:
+The homepage opens with **“A curious mind. A world of possibilities.”** Disciplines appear in the order **Pharmaceutics, Technology, Health, Research, Writing**; the list is open-ended.
 
-- An open-ended disciplines index, with Health as a separate discipline.
-- Selected pharmaceutical research, digital projects and health information systems.
-- A searchable research and publications archive.
-- The published football book *Beyond the Goal*, linked to its provided Amazon listing, and a fantasy manuscript in development.
-- A team roster with Profile, Experience and Projects tabs. The roster is designed to accommodate additional team members.
-- Direct contact links and the graphite, pearl and silver identity.
+The site includes:
 
-Website content avoids temporary service announcements, numbering of disciplines, and personal descriptions outside the team section. The official company website and personal site are separate properties.
+- Responsive navigation and an interactive discipline selector.
+- Links and project details for VybaCash, health technology and pharmaceutical research.
+- A searchable archive with working category filters and accessible detail dialogs.
+- A writing section displaying the owner's supplied, original cover for the published book *Beyond the Goal*, linked to Amazon.
+- A roster-based team section with an overview, technology, pharmaceutics and projects tabs.
+- Direct email and telephone links, with a copy-email control.
 
-## Published book cover
+Graphite Grey (`#34363B`), Pearl (`#F6F6F4`) and Silver (`#A8ADB4`) form the website's palette. The Greylad concentric-G is the shared logo.
 
-The website requests the linked listing's Open Graph image through a metadata endpoint at runtime and displays it only when it passes basic portrait-cover checks. If the listing does not expose a suitable image, the website keeps a neutral text treatment rather than substituting a fabricated book cover. An original licensed cover file can be placed in `dist/book-cover.jpg` and referenced locally if available. The original Amazon cover has not yet been independently verified from the shortened URL.
+## Structure
 
-The metadata endpoint is third-party and could change its availability, quotas or cross-origin policy. Visitors' browsers may contact that provider for the listing image. Review or replace this integration when a local cover asset is available.
+| File | Purpose |
+|---|---|
+| `dist/index.html` | Public website and page content |
+| `dist/styles.css` | Responsive layout and design |
+| `dist/app.js` | Interaction logic, archive and optional remote content |
+| `dist/content.js` | Editorial archive entries |
+| `dist/assets/beyond-the-goal-cover.webp` | Actual book cover provided by the author |
+| `dist/spiral-g*.svg` and `dist/favicon.svg` | Branding |
+| `dist/admin.html` and `dist/admin.js` | Optional private content editor |
+| `dist/config.js` | Optional public backend settings (no credentials included) |
+| `supabase/schema.sql` | Optional content-management schema |
+| `tests/site-smoke.mjs` | Automated source and content checks |
+| `tests/browser_smoke.py` | Headless Chromium UI interaction checks |
+| `.github/workflows/site-checks.yml` | GitHub Actions verification |
+| `CHECKS.md` | Test record and release verification |
 
-## Files and development
+## Run locally
 
-- `dist/index.html` — website content and structure.
-- `dist/styles.css`, `dist/brand-tokens.css` — styling and brand tokens.
-- `dist/app.js` — site interactions (keyboard tabs, mobile navigation, filters, dialogs, book metadata).
-- `dist/content.js` — bundled editorial entries.
-- `dist/admin.html`, `dist/admin.js` — optional editor; accessible at `/admin.html` and gated by separate backend access.
-- `dist/config.js` — optional public backend configuration, blank by default.
-- `supabase/schema.sql` — optional studio-specific content database schema.
-- `vercel.json` — deploy `dist` as the website root.
-- `tests/site-smoke.mjs` — source-level checks run with Node.js.
-- `.github/workflows/site-checks.yml` — automated checks on changes to the source.
+Serve `dist/` with a static server, for example:
 
-### Test locally
+```bash
+python -m http.server 8000 --directory dist
+```
+
+Open `http://localhost:8000/`.
+
+## Test
 
 ```bash
 node --check dist/app.js
-node --check dist/admin.js
 node --check dist/content.js
+node --check dist/admin.js
 node --test tests/site-smoke.mjs
 ```
 
-The source-level checks validate structure, content constraints, and code syntax. They do not replace browser-level, server-level, or database authorization testing. A browser integration test was attempted during this revision but the testing container blocked browser navigation. See `CHECKS.md` for the precise verification record.
+For browser interaction tests, install Python Playwright and use an available Chromium binary:
 
-## Deploy
+```bash
+python tests/browser_smoke.py
+```
 
-Import the repository into Vercel as a static site. The output directory is `dist` and no build command is required. Connect a custom domain through Vercel's Domains settings after registering it. Domain mailbox settings belong to the chosen email service and can be configured independently of the website records.
+The browser test inlines local assets into a temporary page and clicks the actual UI controls at 1440px, 390px and 320px. Results and the test method are documented in `CHECKS.md`.
 
-The content editor is optional and needs a dedicated configuration separate from any other application. Do not commit privileged backend credentials.
+## Deployment
+
+Import the repository into Vercel, choose Other/static and use `dist` as the output directory. `vercel.json` already sets that path. Connect the company's domain when ready.
+
+The owner content editor can be connected to a separate Supabase project later. Keep privileged keys on the server; do not add a database service-role key to browser files. The public site and book cover work independently of the content editor.

@@ -1,124 +1,156 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#34363B" name="theme-color"/>
-<meta content="Greylad works across pharmaceutics, health, research, writing and technology." name="description"/>
-<meta content="Greylad — Pharmaceutics, Health, Research, Writing &amp; Technology" property="og:title"/>
-<meta content="Research, healthcare, publishing, and digital products." property="og:description"/>
-<meta content="website" property="og:type"/>
-<title>Greylad — Pharmaceutics, Health, Research, Writing &amp; Technology</title>
-<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="brand-tokens.css" rel="stylesheet"/>
-<link href="styles.css" rel="stylesheet"/>
-<script defer="" src="config.js"></script>
-<script defer="" src="content.js"></script>
-<script defer="" src="app.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#34363B">
+<meta name="description" content="Greylad — pharmaceutics, technology, health, research and writing. Selected work, products, publications and the people behind them.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Greylad — A curious mind. A world of possibilities.">
+<meta property="og:description" content="Pharmaceutics. Technology. Health. Research. Writing.">
+<title>Greylad — A curious mind. A world of possibilities.</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="brand-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<script defer src="config.js"></script>
+<script defer src="content.js"></script>
+<script defer src="app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<div aria-hidden="true" class="reading-progress"><span id="reading-progress"></span></div>
-<header class="site-header" id="top">
-<a aria-label="Greylad home" class="wordmark" href="#top">
-<img alt="" height="37" src="favicon.svg" width="37"/>
-<span>greylad<span class="wordmark-period">.</span></span>
-</a>
-
-<button aria-controls="navigation" aria-expanded="false" class="menu-button" id="menu" type="button">Menu <span aria-hidden="true">+</span></button>
-<nav aria-label="Main navigation" id="navigation">
-<a href="#practice">Areas</a>
-<a href="#projects">Projects</a>
-<a href="#research">Research</a>
-<a href="#writing">Writing</a>
-<a href="#team">Team</a>
-<a class="nav-contact" href="#contact">Contact</a>
-</nav>
+<div class="progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+<header class="header" id="top">
+  <a href="#top" class="brand" aria-label="Greylad homepage"><img src="favicon.svg" alt="" width="36" height="36"><span>greylad<span class="brand-dot">.</span></span></a>
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="#disciplines">Disciplines</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#writing">Writing</a><a href="#team">Team</a><a href="#contact" class="nav-contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </nav>
+  <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span></button>
 </header>
 <main id="main">
-<section aria-labelledby="hero-heading" class="hero">
-<div class="hero-main">
-<div class="hero-micro"><span aria-hidden="true" class="status-dot"></span><span>GREYLAD</span></div>
-<h1 id="hero-heading"><span>Pharmaceutics<span class="hero-fullstop">.</span></span><span>Health<span class="hero-fullstop">.</span></span><span>Research<span class="hero-fullstop">.</span></span><span>Writing<span class="hero-fullstop">.</span></span><span class="hero-outline">Technology<span class="hero-fullstop">.</span></span></h1>
-<div class="hero-bottom">
-<p>Pharmaceutical science, health systems, research, publishing and digital products.</p>
-<a aria-label="Explore our focus areas" class="round-link" href="#practice"><span aria-hidden="true">↘</span></a>
-</div>
-</div>
-<div aria-label="Interactive Greylad concentric G emblem" class="hero-aside" id="hero-aside" role="img">
-<div aria-hidden="true" class="gridlines"></div>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="pin" aria-hidden="true"></span> GREYLAD</p>
+        <h1 id="hero-title">A curious mind.<br>A world of<br><em>possibilities.</em></h1>
+        <div class="hero-closer">
+          <p>Pharmaceutical science, digital products, healthcare and writing.</p>
+          <a href="#projects" class="button button-pearl">Explore the work <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art" id="hero-art" aria-label="Greylad concentric-line G mark">
+        <div class="hero-art-grid" aria-hidden="true"></div>
+        <img src="spiral-g-light.svg" width="570" height="570" alt="Greylad spiral G emblem" class="hero-g" />
+        <a class="hero-art-link" href="#disciplines">Explore disciplines <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="hero-rail" aria-label="Disciplines">
+      <a href="#disciplines" data-select-discipline="pharm">Pharmaceutics</a>
+      <a href="#disciplines" data-select-discipline="tech">Technology</a>
+      <a href="#disciplines" data-select-discipline="health">Health</a>
+      <a href="#disciplines" data-select-discipline="research">Research</a>
+      <a href="#disciplines" data-select-discipline="writing">Writing</a>
+    </div>
+  </section>
 
-<div aria-hidden="true" class="mark-ring"><img alt="" height="570" src="spiral-g-light.svg" width="570"/></div>
+  <section id="disciplines" class="section" aria-labelledby="disciplines-title">
+    <div class="section-intro"><p class="eyebrow">Disciplines</p><h2 id="disciplines-title">Areas of work.</h2><p class="intro-side">Research, products and published work across science, digital technology and communication.</p></div>
+    <div class="discipline-studio">
+      <div class="discipline-tabs" role="tablist" aria-label="Disciplines" aria-orientation="vertical">
+        <button type="button" role="tab" id="disc-tab-pharm" aria-controls="discipline-panel" data-discipline="pharm" class="discipline-tab is-active" aria-selected="true" tabindex="0"><span>Pharmaceutics</span><span aria-hidden="true">↗</span></button>
+        <button type="button" role="tab" id="disc-tab-tech" aria-controls="discipline-panel" data-discipline="tech" class="discipline-tab" aria-selected="false" tabindex="-1"><span>Technology</span><span aria-hidden="true">↗</span></button>
+        <button type="button" role="tab" id="disc-tab-health" aria-controls="discipline-panel" data-discipline="health" class="discipline-tab" aria-selected="false" tabindex="-1"><span>Health</span><span aria-hidden="true">↗</span></button>
+        <button type="button" role="tab" id="disc-tab-research" aria-controls="discipline-panel" data-discipline="research" class="discipline-tab" aria-selected="false" tabindex="-1"><span>Research</span><span aria-hidden="true">↗</span></button>
+        <button type="button" role="tab" id="disc-tab-writing" aria-controls="discipline-panel" data-discipline="writing" class="discipline-tab" aria-selected="false" tabindex="-1"><span>Writing</span><span aria-hidden="true">↗</span></button>
+      </div>
+      <div id="discipline-panel" class="discipline-panel" role="tabpanel" aria-labelledby="disc-tab-pharm" tabindex="0">
+        <div class="disc-art" aria-hidden="true">
+          <svg viewBox="0 0 480 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g data-art="pharm"><circle cx="245" cy="135" r="98" stroke="currentColor" opacity=".25"/><circle cx="245" cy="135" r="68" stroke="currentColor" opacity=".5"/><rect x="171" y="116" width="147" height="39" rx="19.5" stroke="currentColor" stroke-width="3" transform="rotate(-35 171 116)"/><path d="M195 102L224 143" stroke="currentColor" stroke-width="2"/><path d="M74 221h332M245 19v225" stroke="currentColor" opacity=".15"/></g>
+            <g data-art="tech" hidden><rect x="109" y="49" width="262" height="167" rx="8" stroke="currentColor" stroke-width="2"/><path d="M148 96l-24 20 24 20M332 96l24 20-24 20M278 85l-31 76" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M164 175h160" stroke="currentColor" opacity=".4"/></g>
+            <g data-art="health" hidden><path d="M78 157h68l28-64 42 120 41-81 24 25h117" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M105 50h270v159H105z" stroke="currentColor" opacity=".25"/><circle cx="327" cy="82" r="22" stroke="currentColor"/></g>
+            <g data-art="research" hidden><path d="M75 211h340M75 38v173" stroke="currentColor" opacity=".4"/><path d="M75 171l86-48 80 27 90-98 80 39" stroke="currentColor" stroke-width="3"/><circle cx="161" cy="123" r="9" fill="currentColor"/><circle cx="331" cy="52" r="9" stroke="currentColor" stroke-width="2"/><path d="M161 123v88M331 52v159" stroke="currentColor" stroke-dasharray="4 8" opacity=".4"/></g>
+            <g data-art="writing" hidden><rect x="142" y="24" width="201" height="210" rx="3" stroke="currentColor" stroke-width="2"/><path d="M170 64h143M170 83h143M170 103h113M170 143h143M170 162h124M170 182h143" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".7"/><path d="M170 122h45" stroke="currentColor" stroke-width="6"/></g>
+          </svg>
+          <span class="disc-art-caption" id="discipline-art-caption">Formulation · Manufacturing</span>
+        </div>
+        <div class="disc-copy"><p class="eyebrow" id="discipline-eyebrow">Pharmaceutics</p><h3 id="discipline-title">From formulation to manufacture.</h3><p id="discipline-description">Dosage-form development, manufacturing processes, technology transfer and the science of product quality.</p><a href="#projects" class="text-link" id="discipline-link">View related work <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
-<div aria-label="Areas of work" class="index-strip"><span>EXPLORE</span><a href="#practice">Pharmaceutics</a><a data-open-focus="health" href="#practice">Health</a><a href="#research">Research</a><a href="#writing">Writing</a><a data-open-focus="tech" href="#practice">Technology</a></div>
-<section aria-labelledby="practice-heading" class="section practice-section" id="practice">
-<div class="section-heading reveal"><div><p class="kicker">AREAS OF WORK</p><h2 id="practice-heading">What Greylad does.</h2></div></div>
-<div class="practice-shell reveal">
-<div aria-label="Areas of work" aria-orientation="vertical" class="practice-selector" role="tablist">
-<button aria-controls="focus-panel" aria-selected="true" class="practice-tab active" data-focus="pharm" id="tab-pharm" role="tab" type="button"><strong>Pharmaceutics</strong><span aria-hidden="true">↗</span></button>
-<button aria-controls="focus-panel" aria-selected="false" class="practice-tab" data-focus="health" id="tab-health" role="tab" tabindex="-1" type="button"><strong>Health</strong><span aria-hidden="true">↗</span></button>
-<button aria-controls="focus-panel" aria-selected="false" class="practice-tab" data-focus="research" id="tab-research" role="tab" tabindex="-1" type="button"><strong>Research</strong><span aria-hidden="true">↗</span></button>
-<button aria-controls="focus-panel" aria-selected="false" class="practice-tab" data-focus="writing" id="tab-writing" role="tab" tabindex="-1" type="button"><strong>Writing</strong><span aria-hidden="true">↗</span></button>
-<button aria-controls="focus-panel" aria-selected="false" class="practice-tab" data-focus="tech" id="tab-tech" role="tab" tabindex="-1" type="button"><strong>Technology</strong><span aria-hidden="true">↗</span></button>
-</div>
-<div aria-labelledby="tab-pharm" class="practice-display" id="focus-panel" role="tabpanel" tabindex="0">
-<div class="practice-display-top"><span id="focus-code">PHARMACEUTICS</span><span aria-hidden="true" class="focus-corner">⊕</span></div>
-<div aria-hidden="true" class="practice-illustration">
-<svg focusable="false" viewbox="0 0 400 230">
-<g class="visual-layer" data-visual="pharm"><circle cx="165" cy="113" fill="none" r="83" stroke="currentColor" stroke-width="2"></circle><circle cx="165" cy="113" fill="none" opacity=".4" r="66" stroke="currentColor" stroke-width="1"></circle><line opacity=".22" stroke="currentColor" x1="165" x2="165" y1="31" y2="196"></line><line opacity=".22" stroke="currentColor" x1="81" x2="249" y1="113" y2="113"></line><path d="M148 82 h35 a28 28 0 0 1 0 56 h-35 a28 28 0 0 1 0 -56 z" fill="none" stroke="currentColor" stroke-width="5" transform="rotate(-38 165 110)"></path><path d="M135 110h60" stroke="currentColor" stroke-width="2" transform="rotate(-38 165 110)"></path><g fill="currentColor"><circle cx="283" cy="69" r="4"></circle><circle cx="300" cy="92" r="3"></circle><circle cx="279" cy="112" r="2"></circle></g></g>
-<g class="visual-layer" data-visual="research" hidden=""><path d="M44 162 C91 155 113 50 161 65 S246 185 340 78" fill="none" stroke="currentColor" stroke-width="3"></path><path d="M44 187H355M44 41V187" opacity=".5" stroke="currentColor" stroke-width="1"></path><path d="M44 162L161 65L340 78" fill="none" opacity=".6" stroke="currentColor" stroke-dasharray="2 10"></path><circle cx="161" cy="65" fill="none" r="8" stroke="currentColor" stroke-width="2"></circle><circle cx="340" cy="78" fill="none" r="8" stroke="currentColor" stroke-width="2"></circle><line opacity=".4" stroke="currentColor" stroke-dasharray="3 6" x1="162" x2="162" y1="30" y2="188"></line></g>
-<g class="visual-layer" data-visual="writing" hidden=""><rect fill="none" height="170" rx="4" stroke="currentColor" stroke-width="2" width="205" x="98" y="32"></rect><path d="M123 65H270M123 83H270M123 101H224M123 137H270M123 155H246M123 173H265" opacity=".72" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path><path d="M123 119H167" stroke="currentColor" stroke-linecap="round" stroke-width="6"></path></g>
-<g class="visual-layer" data-visual="tech" hidden=""><rect fill="none" height="127" rx="9" stroke="currentColor" stroke-width="2" width="162" x="108" y="53"></rect><path d="M128 79H247M128 105H227M128 132H194" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path><circle cx="301" cy="109" fill="none" r="20" stroke="currentColor" stroke-width="2"></circle><path d="M270 109H281M321 109H335M301 88V78M301 129V140" stroke="currentColor" stroke-width="2"></path><circle cx="301" cy="109" fill="currentColor" r="5"></circle></g>
-<g class="visual-layer" data-visual="health" hidden=""><rect fill="none" height="169" rx="13" stroke="currentColor" stroke-width="2" width="218" x="89" y="30"></rect><path d="M120 66H225M120 89H269M120 166H269" opacity=".65" stroke="currentColor" stroke-width="3"></path><path d="M120 131h29l12-22 18 44 16-31h74" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><circle cx="294" cy="39" fill="currentColor" opacity=".24" r="9"></circle></g></svg>
-</div>
-<div class="practice-display-copy"><p class="kicker" id="focus-subtitle">PHARMACEUTICAL DEVELOPMENT</p><h3 id="focus-title">Dosage forms and manufacturing.</h3><p id="focus-description">Technical work spanning formulation development, process evaluation, manufacturing transfer and product quality.</p><a class="arrow-link" href="#projects" id="focus-link">Related projects ↗</a></div>
-</div>
-</div>
-</section>
-<section aria-labelledby="projects-heading" class="section work-section" id="projects">
-<div class="section-heading reveal"><div><p class="kicker">PROJECTS</p><h2 id="projects-heading">Selected work.</h2></div></div>
-<div class="work-grid">
-<article class="work-card work-card-wide reveal">
-<div class="card-label"><span>PHARMACEUTICS · RESEARCH</span></div>
-<div class="work-card-main"><div><h3>Excipient selection and manufacturing.</h3><p>A review of excipient function, material properties and manufacturing processes for immediate-release oral dosage forms.</p><a class="arrow-link" href="#research">View research notes <span>↗</span></a></div><div aria-hidden="true" class="tablet-art"><span class="tablet-outer"><span class="tablet-inner"></span></span></div></div>
-</article>
-<article class="work-card reveal"><div class="card-label"><span>DIGITAL PRODUCT</span><span class="status-pill filled">AVAILABLE</span></div><h3>VybaCash<span aria-hidden="true" class="heading-arrow">↗</span></h3><p>Income, expenses, savings goals and spending tools in one personal finance tracker.</p><div aria-label="Stylised financial tracking preview" class="cash-visual"><div class="cash-visual-row"><b>VybaCash</b><span>● ● ●</span></div><div class="cash-visual-number">Money in view<span>▁ ▄ ▂ ▆ ▄ █</span></div><div class="cash-visual-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><a class="arrow-link" href="https://vybacash.vercel.app/" rel="noopener noreferrer" target="_blank">Open VybaCash <span>↗</span></a></article>
-<article class="work-card reveal"><div class="card-label"><span>HEALTH TECHNOLOGY</span></div><h3>Health information systems.</h3><p>Tools for clinical service records, medicine-use reporting and regional health planning.</p><div aria-hidden="true" class="signal-visual"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><button class="arrow-link" data-project="health" type="button">View concept <span>↗</span></button></article>
-</div>
-</section>
-<section aria-labelledby="research-heading" class="research-section section" id="research"><div class="section-heading reveal"><div><p class="kicker">RESEARCH</p><h2 id="research-heading">Research &amp; publications.</h2></div></div>
-<div class="library-panel reveal" id="library"><div class="library-controls"><div aria-label="Filter entries" class="filters" role="group"><button aria-pressed="true" class="active" data-filter="all" type="button">All</button><button aria-pressed="false" data-filter="research" type="button">Research</button><button aria-pressed="false" data-filter="writing" type="button">Writing</button><button aria-pressed="false" data-filter="updates" type="button">Updates</button><button aria-pressed="false" data-filter="resources" type="button">Downloads</button><button aria-pressed="false" data-filter="projects" type="button">Projects</button></div><label class="search-box"><span class="sr-only">Search the research desk</span><input id="search" placeholder="Search the archive" type="search"/><span aria-hidden="true">⌕</span></label></div><p class="library-status" id="library-status" role="status"></p><div class="entries" id="entries"></div><noscript><p>Enable JavaScript to use search and filters. The research and writing sections remain available above and below.</p></noscript></div>
-</section>
-<section aria-labelledby="writing-heading" class="writing-section section" id="writing"><div class="section-heading reveal"><div><p class="kicker">WRITING</p><h2 id="writing-heading">Books &amp; manuscripts.</h2></div></div>
-<div class="books-grid"><article class="book-feature reveal"><div class="book-illustration" id="book-cover-frame"><img alt="Beyond the Goal book cover" class="amazon-book-cover" hidden="" id="amazon-book-cover" src=""/><div aria-hidden="true" class="book-cover-loading" id="book-cover-fallback"><span>BEYOND<br/>THE GOAL</span><small>Published book</small></div></div><div class="book-copy"><p class="kicker">PUBLISHED BOOK</p><h3>Beyond the Goal</h3><p>Football training drills, tactics and practice for players and coaches.</p><a class="button button-light" href="https://amzn.eu/d/06k6AIZ5" rel="noopener noreferrer" target="_blank">View the book on Amazon <span>↗</span></a></div></article>
-<article class="writing-draft reveal"><div class="draft-meta">IN PROGRESS</div><h3>Fantasy manuscript</h3><p>A fantasy book in development.</p></article></div>
-</section>
-<section aria-labelledby="team-heading" class="team-section section" id="team">
-<div class="section-heading reveal"><div><p class="kicker">TEAM</p><h2 id="team-heading">Meet the team.</h2></div></div>
-<div class="team-workspace reveal">
-<aside aria-label="Team members" class="team-roster"><p class="team-roster-label">People</p>
-<button aria-current="true" class="team-person active" data-team-member="george" type="button"><span class="team-person-mark">GS</span><span class="team-person-name"><strong>George Seguya</strong><small>Founder &amp; Head of Development</small></span><span aria-hidden="true">↗</span></button>
-</aside>
-<div class="team-member-display">
-<div class="team-member-head"><div><p class="kicker">DEVELOPMENT</p><h3>George Seguya</h3><p class="team-role">Founder &amp; Head of Development</p></div><div aria-hidden="true" class="team-member-symbol"><img alt="" height="84" src="spiral-g.svg" width="84"/></div></div>
-<div aria-label="Team profile sections" class="team-view-tabs" role="tablist">
-<button aria-controls="team-view-panel" aria-selected="true" class="team-view-tab active" data-team-view="profile" id="team-tab-profile" role="tab" type="button">Profile</button>
-<button aria-controls="team-view-panel" aria-selected="false" class="team-view-tab" data-team-view="experience" id="team-tab-experience" role="tab" tabindex="-1" type="button">Experience</button>
-<button aria-controls="team-view-panel" aria-selected="false" class="team-view-tab" data-team-view="projects" id="team-tab-projects" role="tab" tabindex="-1" type="button">Projects</button>
-</div>
-<div aria-labelledby="team-tab-profile" class="team-view-panel" id="team-view-panel" role="tabpanel" tabindex="0">
-<p class="team-view-lead" id="team-view-lead">Pharmaceutical scientist working in formulation development, manufacturing technology transfer and pharmaceutical quality systems.</p>
-<p class="team-view-detail" id="team-view-detail">Work across pharmaceutical science, research, technical writing and digital product development.</p>
-</div>
-</div>
-</div>
-</section>
-<section aria-labelledby="contact-heading" class="contact-section" id="contact"><div class="contact-inner"><p class="kicker">CONTACT</p><div class="contact-grid"><div><h2 id="contact-heading">Have something<br/>to discuss<span class="contact-punctuation">?</span></h2><p>Research, publishing, technology and collaboration enquiries.</p></div><div class="contact-actions"><a class="contact-link" href="mailto:georgeseguya@yahoo.com"><span>EMAIL</span><strong>georgeseguya@yahoo.com</strong><span aria-hidden="true">↗</span></a><a class="contact-link" href="tel:+2567770447726"><span>PHONE</span><strong>+256 777 044 7726</strong><span aria-hidden="true">↗</span></a><button class="copy-email" data-email="georgeseguya@yahoo.com" id="copy-email" type="button">Copy email address <span aria-hidden="true">⧉</span></button><p class="sr-only" id="copy-status" role="status"></p></div></div></div></section>
+  <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+    <div class="section-intro"><p class="eyebrow">Projects</p><h2 id="projects-title">Selected work.</h2><p class="intro-side">Applications, research and ideas under development.</p></div>
+    <div class="project-grid">
+      <article class="project-card project-vyba">
+        <div class="project-card-top"><span>Software</span><span>Live product</span></div>
+        <div class="project-copy"><h3>VybaCash</h3><p>A personal finance application for income, expenses, savings goals and spending decisions.</p></div>
+        <div class="mini-dashboard" aria-hidden="true"><div class="mini-dash-top"><strong>VybaCash</strong><span>Overview</span></div><div class="mini-dash-main"><span class="mini-pill">Cash balance</span><div class="mini-number">Everything in view.</div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <a href="https://vybacash.vercel.app/" class="project-action" target="_blank" rel="noopener noreferrer">Open VybaCash <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="project-card project-health">
+        <div class="project-card-top"><span>Health · Technology</span><span>In development</span></div>
+        <div class="project-copy"><h3>Health data<br>systems</h3><p>Connected records and reporting tools for healthcare facilities, medicines and public-health planning.</p></div>
+        <div class="health-lines" aria-hidden="true"><svg viewBox="0 0 350 130"><path d="M0 80h68l22-41 43 86 40-63 26 18h151" stroke="currentColor" fill="none" stroke-width="3"/><path d="M0 106h350" stroke="currentColor" opacity=".2"/><circle cx="210" cy="80" r="8" fill="currentColor"/></svg></div>
+        <button type="button" class="project-action" data-project="health">View the concept <span aria-hidden="true">↗</span></button>
+      </article>
+      <article class="project-card project-pharm">
+        <div class="project-card-top"><span>Pharmaceutics · Research</span><span>Research</span></div>
+        <div class="project-copy"><h3>Oral dosage-form research</h3><p>Excipient choices, manufacturing routes and their influence on immediate-release oral dosage forms.</p></div>
+        <div class="pill-graphic" aria-hidden="true"><div class="pill-graphic-ring"><div class="pill-graphic-center"></div></div></div>
+        <button type="button" class="project-action" data-project="pharm">Read about the research <span aria-hidden="true">↗</span></button>
+      </article>
+    </div>
+  </section>
+
+  <section id="research" class="section research-section" aria-labelledby="research-title">
+    <div class="section-intro"><p class="eyebrow">Research &amp; work</p><h2 id="research-title">The archive.</h2><p class="intro-side">Research notes, publications and selected projects.</p></div>
+    <div class="archive">
+      <div class="archive-toolbar">
+        <div class="archive-filters" role="group" aria-label="Filter archive">
+          <button type="button" class="is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="research" aria-pressed="false">Research</button>
+          <button type="button" data-filter="technology" aria-pressed="false">Technology</button>
+          <button type="button" data-filter="health" aria-pressed="false">Health</button>
+          <button type="button" data-filter="writing" aria-pressed="false">Writing</button>
+        </div>
+        <label class="archive-search"><span class="sr-only">Search the archive</span><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5.6" stroke="currentColor" stroke-width="1.4"/><path d="m12.4 12.4 4.5 4.5" stroke="currentColor" stroke-width="1.4"/></svg><input id="search" type="search" placeholder="Search work" autocomplete="off"></label>
+      </div>
+      <div class="archive-results" id="entries" aria-live="polite"></div>
+      <p id="archive-status" class="archive-status" role="status"></p>
+    </div>
+  </section>
+
+  <section id="writing" class="section writing-section" aria-labelledby="writing-title">
+    <div class="section-intro"><p class="eyebrow">Writing</p><h2 id="writing-title">On the bookshelf.</h2><p class="intro-side">Books, publications and manuscripts.</p></div>
+    <div class="book-grid">
+      <article class="book-feature">
+        <a href="https://amzn.eu/d/06k6AIZ5" target="_blank" rel="noopener noreferrer" class="book-cover-wrap" aria-label="View Beyond the Goal on Amazon"><img class="book-cover" src="assets/beyond-the-goal-cover.webp" width="943" height="1500" loading="eager" decoding="async" alt="Original cover of Beyond the Goal: Football Training Drills and Tactics for Players and Coaches, by George Seguya."></a>
+        <div class="book-info"><span class="book-state">Published</span><h3>Beyond the Goal</h3><p class="book-subtitle">Football Training Drills and Tactics for Players and Coaches</p><p>Practical training ideas and tactics for players and coaches, from individual drills to team organisation.</p><a href="https://amzn.eu/d/06k6AIZ5" target="_blank" rel="noopener noreferrer" class="button button-dark">View on Amazon <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="writing-next"><div class="writing-next-glyph" aria-hidden="true"></div><span class="book-state">In progress</span><div><h3>Fantasy novel</h3><p>Work in progress.</p></div></article>
+    </div>
+  </section>
+
+  <section id="team" class="section team-section" aria-labelledby="team-title">
+    <div class="section-intro"><p class="eyebrow">People</p><h2 id="team-title">Meet the team.</h2></div>
+    <div class="team-layout">
+      <aside class="team-directory" aria-label="Team members"><div class="team-directory-top">Team</div><button type="button" class="person-item is-active" data-team-member="george" aria-pressed="true"><span class="person-initials" aria-hidden="true">GS</span><span class="person-text"><strong>George Seguya</strong><small>Founder &amp; Head of Development</small></span><span aria-hidden="true">↗</span></button></aside>
+      <div class="member-pane">
+        <div class="member-head"><div><span class="eyebrow">Founder &amp; Head of Development</span><h3>George Seguya</h3><p>Pharmaceutical scientist · Developer · Researcher</p></div><div class="member-mark" aria-hidden="true"><img src="spiral-g.svg" alt="" width="72" height="72"></div></div>
+        <div class="member-tabs" role="tablist" aria-label="Profile areas">
+          <button type="button" role="tab" class="is-active" id="member-tab-overview" aria-controls="member-panel" data-member-view="overview" aria-selected="true" tabindex="0">Overview</button>
+          <button type="button" role="tab" id="member-tab-technology" aria-controls="member-panel" data-member-view="technology" aria-selected="false" tabindex="-1">Technology</button>
+          <button type="button" role="tab" id="member-tab-pharma" aria-controls="member-panel" data-member-view="pharma" aria-selected="false" tabindex="-1">Pharmaceutics</button>
+          <button type="button" role="tab" id="member-tab-work" aria-controls="member-panel" data-member-view="work" aria-selected="false" tabindex="-1">Projects</button>
+        </div>
+        <div class="member-panel" id="member-panel" role="tabpanel" tabindex="0" aria-labelledby="member-tab-overview"><p id="member-lead" class="member-lead">Pharmaceutical scientist and developer working across medicines, software and research.</p><p id="member-detail" class="member-detail">An interest in how things work has led to projects ranging from manufacturing investigations to VybaCash and healthcare data tools.</p><div id="member-tags" class="member-tags"><span>Product development</span><span>Pharmaceutical science</span><span>Software</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section" aria-labelledby="contact-title"><div class="contact-content"><div><p class="eyebrow">Contact</p><h2 id="contact-title">Get in touch.</h2><p>For project enquiries, research and collaboration.</p></div><div class="contact-links"><a href="mailto:georgeseguya@yahoo.com" class="contact-row"><span>Email</span><strong>georgeseguya@yahoo.com</strong><span aria-hidden="true">↗</span></a><a href="tel:+2567770447726" class="contact-row"><span>Phone</span><strong>+256 777 044 7726</strong><span aria-hidden="true">↗</span></a><button type="button" id="copy-email" class="copy-contact" data-email="georgeseguya@yahoo.com">Copy email <span aria-hidden="true">⧉</span></button><p id="copy-status" class="sr-only" role="status"></p></div></div></section>
 </main>
-<footer class="site-footer"><a class="footer-brand" href="#top"><img alt="" height="33" src="favicon.svg" width="33"/><span>greylad.</span></a><span>Pharmaceutics · Health · Research · Writing · Technology</span><span>© <span id="year">2026</span> Greylad</span></footer>
-<dialog aria-labelledby="detail-title" id="detail"><div class="dialog-head"><p class="kicker" id="detail-category"></p><button aria-label="Close details" class="dialog-close" type="button">×</button></div><h2 id="detail-title"></h2><p class="dialog-status" id="detail-status"></p><div class="dialog-body" id="detail-body"></div><a class="button" hidden="" id="detail-link" rel="noopener noreferrer" target="_blank">Open resource ↗</a></dialog>
+<footer class="footer"><a href="#top" class="footer-brand" aria-label="Back to top"><img src="favicon.svg" alt="" width="29" height="29"><span>greylad.</span></a><span>Pharmaceutics · Technology · Health · Research · Writing</span><span>© <span id="year">2026</span> Greylad</span></footer>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-top"><span id="detail-category" class="eyebrow"></span><button type="button" class="dialog-close" aria-label="Close details">×</button></div><h2 id="detail-title"></h2><p id="detail-body"></p><a id="detail-link" class="button button-dark" href="#" target="_blank" rel="noopener noreferrer" hidden>Open resource <span aria-hidden="true">↗</span></a></dialog>
 </body>
 </html>
