@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Greylad concentric line G emblem">
+<rect width="128" height="128" rx="26" fill="#34363B"/>
+<g fill="none" stroke="#F6F6F4" stroke-linecap="round" stroke-width="1.75">
+<path d="M81.84 47.94 A24.00 24.00 0 1 0 87.70 67.75" stroke="#F6F6F4"/>
+<path d="M85.08 46.15 A27.62 27.62 0 1 0 91.28 68.32" stroke="#A8ADB4"/>
+<path d="M88.46 44.55 A31.25 31.25 0 1 0 94.87 68.89" stroke="#F6F6F4"/>
+<path d="M91.94 43.13 A34.88 34.88 0 1 0 98.45 69.46" stroke="#F6F6F4"/>
+<path d="M95.54 41.92 A38.50 38.50 0 1 0 102.03 70.02" stroke="#F6F6F4"/>
+<path d="M99.23 40.90 A42.12 42.12 0 1 0 105.61 70.59" stroke="#A8ADB4"/>
+<path d="M103.01 40.10 A45.75 45.75 0 1 0 109.19 71.16" stroke="#F6F6F4"/>
+<path d="M106.87 39.50 A49.38 49.38 0 1 0 112.77 71.72" stroke="#F6F6F4"/>
+<path d="M110.80 39.12 A53.00 53.00 0 1 0 116.35 72.29" stroke="#F6F6F4"/>
+</g>
+<path d="M65 64 H111 M65 75 H111" fill="none" stroke="#F6F6F4" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="112" cy="75" r="2.6" fill="#A8ADB4"/>
+</svg>

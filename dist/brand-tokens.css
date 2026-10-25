@@ -1,0 +1,25 @@
+/*
+ * GREYLAD / SHARED APP PALETTE — GREYSCALE EDITION
+ * Graphite Grey is the only chromatic brand anchor.
+ * Pearl and silver are tonal supports, not competing brand colors.
+ * Carry this file into Greylad, VybaCash and future application frontends.
+ */
+:root {
+  color-scheme: light;
+  --graphite: #34363B;         /* Primary brand / navigation / button fill */
+  --graphite-deep: #26282D;    /* Deepest graphite, dark panels */
+  --graphite-hover: #4C4F56;   /* Hover and emphasis */
+  --steel: #5A5E66;            /* Secondary emphasis, decorative lines */
+  --silver: #A8ADB4;           /* Silver highlights */
+  --silver-light: #D6D9DE;     /* Light accents / chart segments */
+  --pearl: #F6F6F4;            /* Page background */
+  --mist: #ECEDEF;             /* Muted cards and section panels */
+  --surface: #FFFFFF;          /* Content cards */
+  --border: #D4D6DA;           /* Borders and dividers */
+  --muted: #666A72;            /* Secondary text, passes text contrast on pearl */
+  --ink: var(--graphite);      /* Primary text */
+  --paper: var(--pearl);       /* Legacy compatibility for current Greylad HTML */
+  --line: var(--border);       /* Legacy compatibility */
+  --font: 'DM Sans', Arial, sans-serif;
+  --focus: #5A5E66;           /* Visible neutral focus outline */
+}

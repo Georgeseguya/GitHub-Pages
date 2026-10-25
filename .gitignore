@@ -1,0 +1,13 @@
+# Credentials and machine-specific files
+.env
+.env.*
+!.env.example
+*.local
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Test artifacts, archives and generated previews
+previews/
+*.zip
+coverage/
