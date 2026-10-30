@@ -17,7 +17,7 @@ window.GREYLAD_CONTENT = [
     id:'vybacash',category:'technology',status:'Live product',published:true,
     title:'VybaCash',summary:'Personal finance software for tracking money, budgets and savings goals.',
     body:'A web-based personal finance application with income and expenditure tracking, savings goals, spending-limit notifications, personal dashboards and account synchronisation.',
-    resource_url:'https://vybacash.vercel.app/'
+    resource_url:'https://vybacash.greylad.me/'
   },
   {
     id:'health-systems',category:'health',status:'In development',published:true,
